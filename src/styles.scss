@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+// todo import 'tailwindcss/tailwind.css'; 
+@import "tailwindcss";
+// todo flowbite                           
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+// todo    import curousel 
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+@theme {
+    --breakepoint-desktop: 1280px;
+    --color-hover: var(--color-green-400)
+}
+
+:root {
+    --hue: 223;
+    --fg: green;
+    --primary: green;
+    --trans-dur: 0.3s;
+}

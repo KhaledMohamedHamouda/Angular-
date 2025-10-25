@@ -1,0 +1,54 @@
+@if(ISLODADING){
+<div class="my-16 flex flex-wrap items-center justify-center  ">
+    <div class="w-full lg:w-1/4">
+        <div class="h-80 animate-pulse rounded bg-gray-400"></div>
+    </div>
+    <div class="w-full lg:w-3/4 p-4 ">
+        <h2 class="h-8 w-1/2 mb-5 bg-gray-400 animate-pulse rounded"></h2>
+        <p class="h-4 w-full mb-4 bg-gray-400 animate-pulse rounded">
+        </p>
+        <span class="h-4 w-1/4 bg-gray-400 animate-pulse rounded"></span>
+        <div class="flex justify-between items-center mt-4">
+            <span class="h-6 w-1/4 bg-gray-400 animate-pulse rounded"></span>
+            <span class="h-6 w-1/4 bg-gray-400 animate-pulse rounded"></span>
+        </div>
+        <div
+            class="w-full bg-green-500 rounded-lg text-white p-1 mt-5 hover:bg-green-600 cursor-pointer active:scale-95 transition-all duration-200 h-10 bg-gray-400 animate-pulse rounded">
+        </div>
+    </div>
+</div>
+}
+
+@else {
+<div class="my-16 flex flex-wrap items-center justify-center  ">
+    <div class="w-full lg:w-1/4">
+        <owl-carousel-o [options]="customOptions">
+
+            @for (src of _productDetais.images; track $index) {
+            <ng-template carouselSlide [id]="'slide.id' + $index">
+                <img [src]="src" alt="">
+            </ng-template>
+            }
+
+        </owl-carousel-o>
+    </div>
+    <div class="w-full lg:w-3/4 p-4 ">
+        <h2 class="text-2xl  mb-5">{{_productDetais.title}}</h2>
+        <p class="font-thin text-gray-500 mb-4">
+            {{_productDetais.description}}
+        </p>
+        <span class="font-sans text-lg"><span
+                class="text-green-500 hover:text-green-600 cursor-pointer">Available</span> :
+            {{_productDetais.quantity}}</span>
+        <div class="flex justify-between items-center mt-4">
+            <span>{{_productDetais.price}} EGP</span>
+            <span><i class="fa fa-star text-yellow-400 me-2"></i><span
+                    class="text-gray-500">{{_productDetais.ratingsAverage}}</span></span>
+        </div>
+        <button (click)="addProductToCart(_productDetais._id)"
+            class="w-full bg-green-500 rounded-lg text-white p-1 mt-5 hover:bg-green-600 cursor-pointer active:scale-95 transition-all duration-200">
+            <i class="fa fa-plus me-1 text-[13px]"></i>Add to Cart</button>
+    </div>
+
+</div>
+}

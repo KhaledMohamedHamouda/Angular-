@@ -1,0 +1,67 @@
+.animated-btn {
+    position: relative;
+    width: 100%;
+    height: 38px;
+    background-color: #16a34a;
+    color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: 500;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animated-btn:hover {
+    background-color:#15803d;
+}
+
+.animated-btn:active {
+    transform: scale(0.96);
+}
+
+.button-wrapper,
+.text,
+.icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: top 0.45s ease;
+}
+
+.text {
+    top: 0;
+}
+
+.icon {
+    top: 110%;
+    /* الأيقونة تحت النص بشوية */
+}
+
+.animated-btn:hover .text {
+    top: -110%;
+    /* النص يطلع فوق خالص */
+}
+
+.animated-btn:hover .icon {
+    top: 0;
+    /* الأيقونة تطلع مكان النص */
+}
+
+.icon svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+    transition: transform 0.4s ease;
+}
+
+.animated-btn:hover .icon svg {
+    transform: scale(1.1);
+}

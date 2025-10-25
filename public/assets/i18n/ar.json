@@ -1,0 +1,32 @@
+{
+  "common": {
+    "home": "الرئيسية",
+    "submit": "إرسال",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل"
+  },
+  "navbar": {
+    "Home": "الرئيسية",
+    "Products": "المنتجات",
+    "Categories": "الفئات",
+    "Cart": "عربة التسوق",
+    "Brands": "الماركات",
+    "Register": "تسجيل",
+    "Login": "تسجيل الدخول",
+    "LogOut": "تسجيل الخروج"
+  },
+  "cart": {
+    "Total_Cart_Price": "إجمالي سعر العربة",
+    "title": "صفحة عربة التسوق",
+    "Add_your_product": "أضف منتجك",
+    "Clear_Cart": "إفراغ العربة",
+    "Checkout": "إتمام الشراء",
+    "Continue_Shopping": "متابعة التسوق",
+    "image": "الصورة",
+    "product": "المنتج",
+    "qty": "الكمية",
+    "price": "السعر",
+    "delete": "حذف"
+  }
+}

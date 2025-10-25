@@ -1,0 +1,68 @@
+<div class="my-12">
+    <h2 [class.!text-red-700]="LoginForm.invalid" class="text-4xl text-green-500 font-thin">Login Form</h2>
+
+
+    <!-- email -->
+    <form (ngSubmit)="submitForm()" [formGroup]="LoginForm" class=" mx-auto my-10">
+        <div class="relative z-0 w-full mb-5 group">
+            <input title="email" [class.!border-b-red-700]="emailController?.touched && emailController?.errors"
+                formControlName="email" type="email" [name]="'floating_'+'email'" [id]="'floating_'+'email'"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-w appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+                placeholder=" " required />
+            <label [class.!text-red-700]="emailController?.touched && emailController?.errors" aria-label="email"
+                [for]="'floating_'+'email'"
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                <span class="capitalize">Email :</span></label>
+        </div>
+        <!-- check validation -->
+        @if(emailController?.touched && emailController?.errors){
+        <div class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            role="alert">
+            @if(emailController?.getError('required')){
+            <p>Email is required</p>
+            }
+            @if(emailController?.getError('email')){
+            <p>Email must be valid</p>
+            }
+        </div>
+        }
+        <!-- password -->
+        <div class="relative z-0 w-full mb-5 group">
+            <input title="password"
+                [class.!border-b-red-700]="passwordController?.touched && passwordController?.errors" type="password"
+                formControlName="password" [name]="'floating_'+'password'" [id]="'floating_'+'password'"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
+                placeholder=" " required />
+            <label [class.!text-red-700]="passwordController?.touched && passwordController?.errors"
+                aria-label="password" [for]="'floating_'+'password'"
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                <span class="capitalize">Password :</span></label>
+        </div>
+        <!-- check validation -->
+        @if(passwordController?.touched && passwordController?.errors){
+        <div class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            role="alert">
+            @if(passwordController?.getError('required')){
+            <p>Password is required</p>
+            }
+            @if(passwordController?.getError('pattern')){
+            <p>password must be at least 6 charcters long & Least 1 upperrcase Letter </p>
+            }
+        </div>
+        }
+
+
+        <div class="flex justify-between items-baseline">
+            <button type="submit" [disabled]="IsLoading" [class.!bg-red-700]="LoginForm.invalid"
+                class="text-white bg-green-700 disabled:opacity-35 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">@if
+                (IsLoading) {
+                Loading....
+                }@else {
+                Submit
+                }</button>
+            <span (click)="goingToResetPassword()" class="text-green-700 me-4 cursor-pointer px-6 py-2 underline border-green-500 rounded-xl">Forge Password</span>
+
+        </div>
+    </form>
+
+</div>

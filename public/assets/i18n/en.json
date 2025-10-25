@@ -1,0 +1,33 @@
+{
+    "common": {
+        "home": "home",
+        "submit": "submit",
+        "cancel": "cancel",
+        "delete": "delete",
+        "edit": "edit"
+    },
+    "navbar": {
+        "Home": "Home",
+        "Products": "Products",
+        "Categories": "Categories",
+        "Cart": "Cart",
+        "Brands": "Brands",
+        "Register": "Register",
+        ":Login": "Login",
+        "LogOut": "LogOut"
+    },
+    "cart": {
+        "Total_Cart_Price":"Total Cart Price",
+        "title":"Cart page",
+        "Add_your_product":"Add your product",
+        "Clear_Cart":"Clear Cart",
+        "Checkout":"Checkout",
+        "Continue_Shopping":"Continue Shopping",
+        "image":"IMAGE",
+        "product":"PRODUCT",
+        "qty":"QTY",
+        "price":"PRICE",
+        "delete":"DELETE"
+    }
+    
+}
