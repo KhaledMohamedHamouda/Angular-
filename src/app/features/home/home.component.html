@@ -1,3 +1,4 @@
+
 <owl-carousel-o [options]="customOptions" class="relative mb-4">
   @for (catogery of catogries; track catogery._id) {
   <ng-template carouselSlide [id]="catogery._id">
@@ -28,7 +29,8 @@
   }
 </owl-carousel-o>
 
-<div class="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-8 mt-9  ">
+
+<div class="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 mt-9  ">
 
   <!-- todo    is loading -->
   @if(isloading)

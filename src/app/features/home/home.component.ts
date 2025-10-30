@@ -20,8 +20,10 @@ export class HomeComponent implements OnInit {
   catogries: Category[] = [];
 
   isloading: boolean = false;
+  
   // todo    inject Product_service bg constructor  && inject Category_service
   constructor(private productService: ProductService, private catogeries: CategoryService, private cartService: CartService, private toaster: ToastrService) { }
+
 
   ngOnInit(): void {
     this.getAllProducts({});
@@ -103,6 +105,4 @@ export class HomeComponent implements OnInit {
     animateOut: 'fadeOut',
     animateIn: 'fadeIn'
   };
-
-
 }

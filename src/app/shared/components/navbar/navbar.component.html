@@ -13,14 +13,7 @@
       <span class="sr-only">Open main menu</span>
     </button>
 
-    <div class="border-2 border-green-600 rounded-xl space-x-3 px-3">
-      <button (click)="languageService.changeLang('en')">
-        <i class="fa-solid fa-left-long cursor-pointer text-gray-600 hover:text-hover"></i>
-      </button>
-      <button (click)="languageService.changeLang('ar')">
-        <i class="fa-solid fa-right-long cursor-pointer text-gray-600 hover:text-hover"></i>
-      </button>
-    </div>
+    
 
     <div class="hidden justify-between grow w-full lg:flex items-center lg:w-auto" id="navbar-default">
       @if (!islogin) {
@@ -50,7 +43,7 @@
           <a href="https://www.twitter.com" aria-label="twitter">
             <i class="fa-brands fa-x-twitter hover:text-black active:scale-95 dark:hover:text-white"></i>
           </a>
-          <a href="https://www.linkedin.com" aria-label="li">
+          <a href="https://www.github.com" aria-label="li">
             <i class="fa-brands fa-github hover:text-black active:scale-95 dark:hover:text-white"></i>
           </a>
         </li>
@@ -69,7 +62,7 @@
         @if (!islogin) {
         <li>
           <span (click)="Logout()"
-            class="ms cursor-pointer px-3 pb-1 border rounded-xl border-green-500 text-green-500 hover:text-red-700 hover:border-red-700">LogOut</span>
+            class="ms cursor-pointer px-3 pb-1 border rounded-xl border-green-500 text-green-500 hover:text-red-700 hover:border-red-700">Logout</span>
         </li>
         }
       </ul>

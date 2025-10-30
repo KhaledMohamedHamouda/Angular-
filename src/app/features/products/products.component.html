@@ -1,0 +1,53 @@
+<form class="flex items-center max-w-sm mx-auto mt-6 ">
+  <label for="simple-search" class="sr-only">Search</label>
+  <div class="relative w-full">
+    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+      <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+        fill="none" viewBox="0 0 18 20">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M3 5v10M3 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0V6a3 3 0 0 0-3-3H9m1.5-2-2 2 2 2" />
+      </svg>
+    </div>
+    <input type="text" id="simple-search"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+      placeholder="Search ..." required />
+  </div>
+  <button type="submit"
+    class="p-2.5 ms-2 text-sm font-medium text-white bg-green-700 rounded-lg border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+    </svg>
+    <span class="sr-only">Search</span>
+  </button>
+</form>
+
+@if (loading) {
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 mt-9">
+
+
+  @for (s of [1,2,3,4,5,6,7,8]; track $index) {
+  <div class="h-80 rounded-lg bg-gray-200 dark:bg-gray-800 animate-pulse"></div>
+  }
+</div>
+}
+
+@if (!loading && products.length === 0) {
+<h1 class="text-red-700  w-1/4 text-3xl py-2 mb-4 rounded-lg mx-auto text-center mt-22">Sign...<i
+    class="fa-solid fa-signs-post"></i></h1>
+<h1 class="text-center text-white capitalize text-3xl w-2/3 mx-auto rounded-lg p-3 bg-red-700">product of that catogery
+  will be here soon <i class="fa-solid fa-hourglass-start"></i></h1>
+}
+
+@if (!loading && products.length > 0) {
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 mt-9">
+  @for (product of products; track product._id) {
+  <app-porduct-card [product]="product"></app-porduct-card>
+  }
+</div>
+
+
+<button
+  class="bg-green-600 shadow-lg px-4 py-2 my-20 text-white rounded-lg hover:bg-black duration-400 w-full cursor-pointer active:scale-90 ">NEXT
+  PAGE</button>
+}

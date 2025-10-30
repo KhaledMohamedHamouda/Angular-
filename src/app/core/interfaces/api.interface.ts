@@ -12,7 +12,7 @@ export interface Metadata {
 }
 
 export interface Product {
-  sold?: number
+  sold: number
   images: string[]
   subcategory: Subcategory[]
   ratingsQuantity: number
@@ -30,7 +30,7 @@ export interface Product {
   updatedAt: string
   id: string
   priceAfterDiscount?: number
-  availableColors?: any[]
+  availableColors?: string[]
 }
 
 export interface Subcategory {

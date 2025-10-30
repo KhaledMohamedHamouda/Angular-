@@ -1,1 +1,24 @@
-<p>categories works!</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 
+            gap-6 mt-9 justify-items-center mx-auto max-w-[1200px]">
+
+  @for (category of catogories; track $index) {
+    <div (click)="goToCategoryProducts(category._id)" class="relative group rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer 
+                w-full sm:w-[200px]">
+      
+      <div 
+        [style.background-image]="'url(' + category.image + ')'"
+        class="bg-cover bg-center
+               h-[160px] sm:h-[200px] md:h-[240px] lg:h-[260px]">
+      </div>
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+      <div class="absolute bottom-3 left-3 text-white">
+        <h3 class="font-semibold text-lg">{{category.name}}</h3>
+        <p class="text-sm opacity-90">{{category.slug}}</p>
+      </div>
+
+    </div>
+  }
+
+</div>
