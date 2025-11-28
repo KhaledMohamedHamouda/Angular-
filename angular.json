@@ -7,7 +7,29 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "type": "component"
+        },
+        "@schematics/angular:directive": {
+          "type": "directive"
+        },
+        "@schematics/angular:pipe": {
+          "type": "pipe"
+        },
+        "@schematics/angular:service": {
+          "type": "service"
+        },
+        "@schematics/angular:class": {
+          "type": "class"
+        },
+        "@schematics/angular:guard": {
+          "type": "guard"
+        },
+        "@schematics/angular:interface": {
+          "type": "interface"
+        },
+        "@schematics/angular:interceptor": {
+          "type":"interceptor"
         }
       },
       "root": "",
@@ -30,6 +52,7 @@
               }
             ],
             "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.scss"
             ],
             "server": "src/main.server.ts",
