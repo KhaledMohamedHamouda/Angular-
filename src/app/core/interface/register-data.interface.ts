@@ -1,4 +1,4 @@
-export interface register_data {
+export interface Iregister {
     userName: string;
     email: string;
     phone: string;

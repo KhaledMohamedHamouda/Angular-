@@ -22,7 +22,7 @@ constructor(private flowbiteService: FlowbiteService) {}
     Highcharts.chart('hrChart', {
   chart: {
     type: 'pie',
-    backgroundColor: '#0f172a', // <-- نفس لون bg-gray-900 في Tailwind
+    backgroundColor: '', // <-- نفس لون bg-gray-900 في Tailwind
     plotShadow: false,
     plotBorderWidth: 0,
     borderWidth: 0
@@ -30,7 +30,7 @@ constructor(private flowbiteService: FlowbiteService) {}
   },
   title: {
     text: 'HR Analytics',
-    style: { color: '#fff' } // خلي العنوان أبيض عشان يبان على الخلفية
+    style: { color: '#dda' } // خلي العنوان أبيض عشان يبان على الخلفية
   },
   plotOptions: {
     pie: {
@@ -38,7 +38,7 @@ constructor(private flowbiteService: FlowbiteService) {}
       cursor: 'pointer',
       dataLabels: {
         enabled: true,
-        style: { color: '#fff' } // خلي النسب ظاهرة على الخلفية الداكنة
+        style: { color: '#adc' } // خلي النسب ظاهرة على الخلفية الداكنة
       }
     }
   },

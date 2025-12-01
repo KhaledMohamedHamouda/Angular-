@@ -1,9 +1,6 @@
-// todo import tailwindcss base styles
 @import "tailwindcss";
-
-// todo import flowbite styles
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
-
-// todo   colours   
+// todo import flowbite styles
+@import "flowbite/src/themes/default";

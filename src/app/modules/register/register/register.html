@@ -1,5 +1,5 @@
+<p-toast />
 <div class="flex h-screen bg-gray-950 text-white">
-
     <div class="hidden lg:flex flex-col justify-between p-12 w-1/2 bg-gray-950 relative overflow-hidden">
 
         <div
@@ -41,7 +41,7 @@
 
             <h2 class="text-4xl  mb-12 " [class.!text-red-600]="registerForm.invalid&&registerForm.touched">Sign up</h2>
 
-            <form [formGroup]="registerForm">
+            <form [formGroup]="registerForm" (ngSubmit)="handleSubmit()" novalidate>
                 <!-- todo name  -->
                 <div class="relative z-0 w-full mb-5 group">
                     <input type="text" name="floating_name" id="floating_name" formControlName="userName"
@@ -125,7 +125,8 @@
                 </button>
 
                 <div id="dropdownRadioBgHover"
-                    class="z-10 hidden bg-gray-800 border border-blue-500/20 rounded-md shadow-xl w-48">
+                    class="z-10 hidden bg-gray-800 border border-blue-500/20 rounded-md shadow-xl w-48"
+                    [class.bg.red-600]="roleControl?.touched && roleControl?.errors">
                     <ul class="p-2 text-sm text-gray-300 font-medium space-y-1"
                         aria-labelledby="dropdownRadioBgHoverButton">
 
@@ -180,12 +181,12 @@
                 <!-- ------------------- -->
 
                 <button type="submit" [disabled]="registerForm.invalid"
-                 [class.!bg-red-600]="registerForm.invalid&&registerForm.touched"   class="disabled:opacity-30 w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition duration-200 cursor-pointer shadow-md shadow-blue-600/50">
+                    [class.!bg-red-600]="registerForm.invalid&&registerForm.touched"
+                    class="disabled:opacity-30 w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition duration-200 cursor-pointer shadow-md shadow-blue-600/50">
                     Sign up
                 </button>
             </form>
 
         </div>
     </div>
-
 </div>
