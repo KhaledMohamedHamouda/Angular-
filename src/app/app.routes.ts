@@ -37,6 +37,11 @@ export const routes: Routes = [
         loadComponent: () => import('./modules/layouts/employee/employee/employee.component').then(m => m.EmployeeComponent)
     },
     {
+        path:'home',    
+        loadComponent: () => import('./modules/home/home/home.component').then(m => m.HomeComponent)    
+    }
+    ,
+    {
         path: '**',
         loadComponent:() => import('./modules/NotFound/not-found/not-found.component').then(m => m.NotFoundComponent)
     }

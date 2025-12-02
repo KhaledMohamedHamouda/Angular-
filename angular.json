@@ -44,11 +44,6 @@
             ],
             "styles": [
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "node_modules/@primeuix/themes/lara/blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/primeflex/primeflex.css",
-              "node_modules/primeicons/primeicons.css",
-              "node_modules/primeflex/primeflex.css",
               "src/styles.scss"
             ],
             "server": "src/main.server.ts",

@@ -8,17 +8,22 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
-
+import Aura from '@primeuix/themes/aura';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideAnimationsAsync(),
+    providePrimeNG({
+      theme: {
+        preset: Aura
+      }
+    }),
+    MessageService,
     provideHttpClient(withFetch()),
     provideHighcharts(),
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideClientHydration(withEventReplay()),
     provideRouter(routes),
-    provideAnimations(),
-    MessageService
   ]
 };
